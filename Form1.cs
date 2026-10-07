@@ -231,6 +231,29 @@ namespace Cotizador_2024_4070
                 $"Cuenta total: US$ {cuentaTotal:N2}"
             );
         }
+
+        private void btnViejo_Click(object sender, EventArgs e)
+        {
+            lstResultados.Items.Add(
+                $"Depósito de 1000: {SistemaViejo.CalcularDeposito(1000m):N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"100 USD a tasa 60: {SistemaViejo.APesos(100m, 60m):N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Tarifa 200 fin de semana: {SistemaViejo.TarifaFinDeSemana(200m, true):N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Excursión 4 × 50: {SistemaViejo.TotalExcursion(4, 50m):N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Minibar 3 × 4: {SistemaViejo.TotalMinibar(3, 4m):N2}"
+            );
+        }
     }
 }
 

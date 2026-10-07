@@ -49,6 +49,7 @@
             btnExcursion = new Button();
             btnMinibar = new Button();
             btnCuentaTotal = new Button();
+            btnViejo = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -251,11 +252,22 @@
             btnCuentaTotal.UseVisualStyleBackColor = true;
             btnCuentaTotal.Click += btnCuentaTotal_Click;
             // 
+            // btnViejo
+            // 
+            btnViejo.Location = new Point(295, 357);
+            btnViejo.Name = "btnViejo";
+            btnViejo.Size = new Size(164, 29);
+            btnViejo.TabIndex = 21;
+            btnViejo.Text = "Probar boton viejo";
+            btnViejo.UseVisualStyleBackColor = true;
+            btnViejo.Click += btnViejo_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(980, 713);
+            Controls.Add(btnViejo);
             Controls.Add(btnCuentaTotal);
             Controls.Add(btnMinibar);
             Controls.Add(btnExcursion);
@@ -310,5 +322,6 @@
         private Button btnExcursion;
         private Button btnMinibar;
         private Button btnCuentaTotal;
+        private Button btnViejo;
     }
 }
