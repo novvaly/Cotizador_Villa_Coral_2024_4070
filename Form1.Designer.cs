@@ -50,6 +50,7 @@
             btnMinibar = new Button();
             btnCuentaTotal = new Button();
             btnViejo = new Button();
+            btnFactura = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -262,11 +263,23 @@
             btnViejo.UseVisualStyleBackColor = true;
             btnViejo.Click += btnViejo_Click;
             // 
+            // btnFactura
+            // 
+            btnFactura.BackColor = Color.MistyRose;
+            btnFactura.Location = new Point(484, 357);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Size = new Size(164, 29);
+            btnFactura.TabIndex = 22;
+            btnFactura.Text = "Factura de la estadia";
+            btnFactura.UseVisualStyleBackColor = false;
+            btnFactura.Click += btnFactura_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(980, 713);
+            Controls.Add(btnFactura);
             Controls.Add(btnViejo);
             Controls.Add(btnCuentaTotal);
             Controls.Add(btnMinibar);
@@ -323,5 +336,6 @@
         private Button btnMinibar;
         private Button btnCuentaTotal;
         private Button btnViejo;
+        private Button btnFactura;
     }
 }

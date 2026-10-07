@@ -254,6 +254,136 @@ namespace Cotizador_2024_4070
                 $"Minibar 3 × 4: {SistemaViejo.TotalMinibar(3, 4m):N2}"
             );
         }
+
+        
+            private void btnFactura_Click(object sender, EventArgs e)
+        {
+            // Limpiar resultados anteriores
+            lstResultados.Items.Clear();
+
+            // ==========================================
+            // 1. CREAR RESERVA
+            // ==========================================
+
+            decimal tarifa = nudTarifa.Value;
+
+            // Aplicar recargo de fin de semana si está marcado
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
+
+
+            // ==========================================
+            // 2. CREAR TRASLADO
+            // ==========================================
+
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = 2,
+                Nocturno = true
+            };
+
+
+            // ==========================================
+            // 3. CREAR EXCURSIÓN
+            // ==========================================
+
+            var excursion = new Excursion
+            {
+                Personas = 4,
+                PrecioPorPersona = 45m
+            };
+
+
+            // ==========================================
+            // 4. CREAR MINIBAR
+            // ==========================================
+
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 2,
+                PrecioUnitario = 3.50m
+            };
+
+
+            // ==========================================
+            // 5. CALCULAR TOTAL GENERAL
+            // ==========================================
+
+            decimal totalGeneral =
+                reserva.Total +
+                traslado.Total +
+                excursion.Total +
+                minibar.Total;
+
+
+            // ==========================================
+            // 6. CONVERTIR A RD$
+            // ==========================================
+
+            decimal tasa = nudTasa.Value;
+            decimal totalPesos = totalGeneral * tasa;
+
+
+            // ==========================================
+            // 7. CALCULAR DEPÓSITO DEL 30%
+            // ==========================================
+
+            decimal deposito =
+                SistemaViejo.CalcularDeposito(totalGeneral);
+
+
+            // ==========================================
+            // 8. MOSTRAR FACTURA
+            // ==========================================
+
+            lstResultados.Items.Add("========== FACTURA ==========");
+
+            lstResultados.Items.Add(
+                $"Huésped: {reserva.Huesped}"
+            );
+
+            lstResultados.Items.Add(
+                $"Estadía: US$ {reserva.Total:N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Traslado aeropuerto: US$ {traslado.Total:N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Excursión Saona: US$ {excursion.Total:N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Consumo minibar: US$ {minibar.Total:N2}"
+            );
+
+            lstResultados.Items.Add("------------------------------");
+
+            lstResultados.Items.Add(
+                $"TOTAL GENERAL: US$ {totalGeneral:N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"TOTAL GENERAL: RD$ {totalPesos:N2}"
+            );
+
+            lstResultados.Items.Add(
+                $"Depósito 30%: US$ {deposito:N2}"
+            );
+
+            lstResultados.Items.Add("==============================");
+        }
     }
-}
+    }
+
 
