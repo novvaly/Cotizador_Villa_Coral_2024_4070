@@ -34,6 +34,7 @@
             lstResultados = new ListBox();
             txtTarifas = new TextBox();
             txtNoches = new TextBox();
+            btnNivel1 = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             SuspendLayout();
@@ -83,11 +84,23 @@
             txtNoches.TabIndex = 5;
             txtNoches.Text = "Noches:";
             // 
+            // btnNivel1
+            // 
+            btnNivel1.BackColor = SystemColors.ActiveCaption;
+            btnNivel1.Location = new Point(610, 159);
+            btnNivel1.Name = "btnNivel1";
+            btnNivel1.Size = new Size(94, 29);
+            btnNivel1.TabIndex = 6;
+            btnNivel1.Text = "Nivel1";
+            btnNivel1.UseVisualStyleBackColor = false;
+            btnNivel1.Click += btnNivel1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(751, 450);
+            Controls.Add(btnNivel1);
             Controls.Add(txtNoches);
             Controls.Add(txtTarifas);
             Controls.Add(lstResultados);
@@ -110,5 +123,6 @@
         private ListBox lstResultados;
         private TextBox txtTarifas;
         private TextBox txtNoches;
+        private Button btnNivel1;
     }
 }
