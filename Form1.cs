@@ -167,6 +167,70 @@ namespace Cotizador_2024_4070
             lstResultados.Items.Add($"Servicio: US$ {reserva.Servicio:N2}");
             lstResultados.Items.Add($"Total: US$ {reserva.Total:N2}");
         }
+
+        private void btnTraslado_Click(object sender, EventArgs e)
+        {
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = 2,
+                Nocturno = true
+            };
+
+            lstResultados.Items.Add(
+                $"Traslado aeropuerto: US$ {traslado.Total:N2}"
+            );
+        }
+
+        private void btnMinibar_Click(object sender, EventArgs e)
+        {
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 2,
+                PrecioUnitario = 3.50m
+            };
+
+            lstResultados.Items.Add(
+                $"Consumo minibar: US$ {minibar.Total:N2}"
+            );
+        }
+
+        private void btnCuentaTotal_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = nudTarifa.Value
+            };
+
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = 2,
+                Nocturno = true
+            };
+
+            var excursion = new Excursion
+            {
+                Personas = 4,
+                PrecioPorPersona = 45m
+            };
+
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 2,
+                PrecioUnitario = 3.50m
+            };
+
+            decimal cuentaTotal =
+                reserva.Total +
+                traslado.Total +
+                excursion.Total +
+                minibar.Total;
+
+            lstResultados.Items.Add(
+                $"Cuenta total: US$ {cuentaTotal:N2}"
+            );
+        }
     }
 }
 

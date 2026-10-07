@@ -45,6 +45,10 @@
             chkFinSemana = new CheckBox();
             btnFinSemana = new Button();
             btnDesglose = new Button();
+            btnTraslado = new Button();
+            btnExcursion = new Button();
+            btnMinibar = new Button();
+            btnCuentaTotal = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTarifa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
@@ -102,7 +106,7 @@
             // btnNivel1
             // 
             btnNivel1.BackColor = SystemColors.ActiveCaption;
-            btnNivel1.Location = new Point(25, 463);
+            btnNivel1.Location = new Point(750, 63);
             btnNivel1.Name = "btnNivel1";
             btnNivel1.Size = new Size(94, 29);
             btnNivel1.TabIndex = 6;
@@ -207,11 +211,55 @@
             btnDesglose.UseVisualStyleBackColor = true;
             btnDesglose.Click += btnDesglose_Click;
             // 
+            // btnTraslado
+            // 
+            btnTraslado.Location = new Point(34, 353);
+            btnTraslado.Name = "btnTraslado";
+            btnTraslado.Size = new Size(159, 29);
+            btnTraslado.TabIndex = 17;
+            btnTraslado.Text = "Traslado areopuerto";
+            btnTraslado.UseVisualStyleBackColor = true;
+            btnTraslado.Click += btnTraslado_Click;
+            // 
+            // btnExcursion
+            // 
+            btnExcursion.Location = new Point(34, 388);
+            btnExcursion.Name = "btnExcursion";
+            btnExcursion.Size = new Size(140, 29);
+            btnExcursion.TabIndex = 18;
+            btnExcursion.Text = "Excursion Saona";
+            btnExcursion.UseVisualStyleBackColor = true;
+            // 
+            // btnMinibar
+            // 
+            btnMinibar.AccessibleRole = AccessibleRole.Cursor;
+            btnMinibar.Location = new Point(34, 423);
+            btnMinibar.Name = "btnMinibar";
+            btnMinibar.Size = new Size(136, 29);
+            btnMinibar.TabIndex = 19;
+            btnMinibar.Text = "Consumo Minibar";
+            btnMinibar.UseVisualStyleBackColor = true;
+            btnMinibar.Click += btnMinibar_Click;
+            // 
+            // btnCuentaTotal
+            // 
+            btnCuentaTotal.Location = new Point(34, 458);
+            btnCuentaTotal.Name = "btnCuentaTotal";
+            btnCuentaTotal.Size = new Size(147, 29);
+            btnCuentaTotal.TabIndex = 20;
+            btnCuentaTotal.Text = "Cuenta total";
+            btnCuentaTotal.UseVisualStyleBackColor = true;
+            btnCuentaTotal.Click += btnCuentaTotal_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(980, 713);
+            Controls.Add(btnCuentaTotal);
+            Controls.Add(btnMinibar);
+            Controls.Add(btnExcursion);
+            Controls.Add(btnTraslado);
             Controls.Add(btnDesglose);
             Controls.Add(btnFinSemana);
             Controls.Add(chkFinSemana);
@@ -258,5 +306,9 @@
         private CheckBox chkFinSemana;
         private Button btnFinSemana;
         private Button btnDesglose;
+        private Button btnTraslado;
+        private Button btnExcursion;
+        private Button btnMinibar;
+        private Button btnCuentaTotal;
     }
 }
